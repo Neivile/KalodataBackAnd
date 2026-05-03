@@ -2,9 +2,9 @@
   "name": "kalodata-session-manager",
   "version": "1.0.0",
   "description": "Backend para extração de dados do Kalodata com Session Manager",
-  "main": "dist/server.ts",
+  "main": "dist/server.js",
   "scripts": {
-    "start": "ts-node server.ts",
+    "start": "node dist/server.js",
     "build": "tsc",
     "dev": "ts-node-dev --respawn --transpile-only server.ts",
     "postinstall": "npx playwright install chromium --with-deps"
@@ -17,7 +17,7 @@
     "express-rate-limit": "^7.1.5",
     "playwright": "^1.41.0",
     "playwright-extra": "^4.3.6",
-    "stealth-plugin": "^1.0.0"
+    "playwright-extra-plugin-stealth": "^2.11.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
