@@ -1,7 +1,7 @@
 import { chromium } from 'playwright-extra';
-import stealth from 'stealth-plugin';
+import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 
-chromium.use(stealth());
+chromium.use(StealthPlugin());
 
 export async function getBrowser() {
   const browser = await chromium.launch({ 
@@ -9,7 +9,7 @@ export async function getBrowser() {
     args: [
       '--no-sandbox', 
       '--disable-setuid-sandbox',
-      '--disable-dev-shm-usage', // Evita crashes por falta de memória compartilhada no Docker
+      '--disable-dev-shm-usage',
       '--disable-gpu'
     ]
   });
